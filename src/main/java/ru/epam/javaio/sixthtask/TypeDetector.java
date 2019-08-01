@@ -1,4 +1,4 @@
-package sixthtask;
+package ru.epam.javaio.sixthtask;
 
 public class TypeDetector {
 
