@@ -1,0 +1,17 @@
+
+import java.sql.*;
+import java.util.*;
+
+public class AudienceJdbcDao {
+
+	public ConnectionProvider connectionProvider;
+	public static final String INSERT = "INSERT INTO audiences (audience_id, number) VALUES(?,?)";
+	public static final String SELECT = "SELECT * FROM audiences WHERE audience_id = ?";
+	public static final String UPDATE = "UPDATE audiences SET number=? WHERE audience_id=?";
+	public static final String DELETE = "DELETE FROM audiences WHERE audience_id=?";
+	public static final String SELECT_ALL = "SELECT audience_id, number FROM audiences";
+
+	public Audience mapToAudience(ResultSet resultSet) throws SQLException {
+		return new Audience(resultSet.getInt("audience_id"), resultSet.getInt("number"));
+	}
+}
